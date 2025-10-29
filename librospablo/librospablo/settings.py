@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     #apps de terceros
 
     #apps propias
-    'vistaprevia',
+    'vistaprevia.apps.VistapreviaConfig', # llamamos a la aplicación a través de la clase VistapreviaConfig que está en vistaprevia/apps.py
 ]
 
 MIDDLEWARE = [
