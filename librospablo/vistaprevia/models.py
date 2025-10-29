@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.html import format_html # nos permite usar formato html
 
 #orm que me permite crear tablas a través de clases
 
@@ -25,6 +26,15 @@ class Producto(models.Model):
     fecha_publicacion = models.DateTimeField('Fecha de publicación')
     imagen = models.ImageField(upload_to="nombre_producto/%Y/%m/%d", blank=True, null=True) # se aclara que, por defecto, puede estar en blanco
     categoria = models.ManyToManyField(Categoria) # establezco la relación N a N con la tabla Categoría
+    
+    def estado_de_producto(self): # le damos color según su estado en el panel de administrador
+        if self.estado == 'Retirado':
+            return format_html('<span style="color: #f00;">{}</span>', self.estado, )
+        elif self.estado == 'Borrador':
+            return format_html('<span style="color: #f0f;">{}</span>', self.estado, )
+        elif self.estado == 'Publicado':
+            return format_html('<span style="color: #099;">{}</span>', self.estado, )
+    
     
     def __str__(self, ):
         return self.nombre_producto
