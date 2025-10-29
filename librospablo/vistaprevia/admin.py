@@ -16,7 +16,11 @@ class ProductoAdmin(admin.ModelAdmin): # cambiamos la forma de registrar el prod
             },
         ),
     ]
-
+    list_display = ['nombre_producto', 'fecha_publicacion', 'estado', 'imagen'] # permite una mejor visualización de los datos. Pisa el método __str__ de la clase Producto
+    ordering = ['-fecha_publicacion'] # ordena por fecha de más reciente a más antiguo (para cambiarlo sacamos el '-')
+    list_filter = ('nombre_producto', 'fecha_publicacion',) # nos permite filtrar según esos campos
+    search_fields = ('nombre_producto', 'estado',) # nos permite realizar búsquedas según esos campos
+    list_display_links = ('nombre_producto', 'fecha_publicacion',) # nos permite hacer click en esos campos para ingresar al producto
 
 admin.site.register(Producto, ProductoAdmin) 
 
