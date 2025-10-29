@@ -25,8 +25,12 @@ class Producto(models.Model):
     nombre_producto = models.CharField(max_length=200)
     fecha_publicacion = models.DateTimeField('Fecha de publicación')
     imagen = models.ImageField(upload_to="nombre_producto/%Y/%m/%d", blank=True, null=True) # se aclara que, por defecto, puede estar en blanco
-    categoria = models.ManyToManyField(Categoria) # establezco la relación N a N con la tabla Categoría
-    
+    #categoria = models.ManyToManyField(Categoria) # establezco la relación N a N con la tabla Categoría
+    categoria = models.ForeignKey(
+        Categoria, blank=False, null=True, on_delete=models.CASCADE
+    )
+
+
     def estado_de_producto(self): # le damos color según su estado en el panel de administrador
         if self.estado == 'Retirado':
             return format_html('<span style="color: #f00;">{}</span>', self.estado, )
