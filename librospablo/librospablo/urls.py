@@ -20,4 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('vistaprevia/', include('vistaprevia.urls')), #desde acá lo mando al urls secundario de la app vistaprevia, y ese redirige a views
+    path('accounts/', include('registration.backends.default.urls')), # nos permite ir a la parte de registro de usuarios
+    path('usuarios/', include('usuarios.urls'))
 ]
