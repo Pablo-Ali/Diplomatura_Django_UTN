@@ -14,12 +14,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('vistaprevia/', include('vistaprevia.urls')), #desde acá lo mando al urls secundario de la app vistaprevia, y ese redirige a views
     path('accounts/', include('registration.backends.default.urls')), # nos permite ir a la parte de registro de usuarios
     path('usuarios/', include('usuarios.urls'))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #esto permite que las páginas estáticas se puedan cargar en desarrollo

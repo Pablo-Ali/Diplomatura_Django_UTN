@@ -1,21 +1,23 @@
-{% load static %} <!-- le digo a django que voy a trabajar con hojas estáticas -->
-
+{%load static%} <!-- le digo a django que voy a trabajar con hojas estáticas -->
 <!DOCTYPE html>
 
 <html lang="es">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}{% if page_title %}{{ page_title }} - {% endif %}{{ site_name }}{% endblock %}</title>
+        <title>{% block title %}{% if page_title %}{% page_title %} - {% endif %}{{site_name}}{% endblock %}</title>
         <meta name="keywords" content="{{ palabras_claves }}" />
         <meta name="description" content="{{ descripcion }}" />
         <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"> <!-- la llamada la hago con static en django -->
     </head>
 
     <body>
-        {% block content %}
+        <h1>Hola {{nombre_sitio}}</h1>
+        <h2>Hola</h2>
+        <p>Hola</p>
 
-        {% endblock %}
+        <div>div 1</div>
+        <div>div 2</div>
+        <div>div 3</div>
     </body>
-
 </html>

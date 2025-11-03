@@ -127,9 +127,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 # indicamos dónde están los directorios con recursos (imágenes y demás)
-STATIC_URL = 'static/'
+STATIC_URL = 'static/' #en este directorio va a ir a buscar los estilos en desarrollo
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATICFIELDS_DIRS = (os.path.join(BASE_DIR, "static_dev"),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),) #acá busca los estilos en producción
 MEDIA_URL = "/meida/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
