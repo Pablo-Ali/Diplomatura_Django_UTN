@@ -18,6 +18,8 @@ class Mascota(models.Model):
 
     estado = models.CharField(max_length=15, choices=ESTADO_MASCOTA, default='En adopción')
     nombre_mascota = models.CharField(max_length=200)
+    sexo = models.CharField(max_length=20, default="No especificado")
+    edad = models.IntegerField(default=0)
     fecha_publicacion = models.DateTimeField('Fecha de publicación')
     imagen = models.ImageField(upload_to="nombre_mascota/%Y/%m/%d", blank=True, null=True)
     especie = models.ForeignKey(
