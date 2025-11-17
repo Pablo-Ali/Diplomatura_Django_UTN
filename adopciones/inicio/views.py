@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+def index(request): #agrego un index básico para que no se rompa la aplicación
+    
+    return render(request, 'inicio/index.html')
