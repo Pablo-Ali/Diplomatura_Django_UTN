@@ -16,7 +16,7 @@ class Mascota(models.Model):
         (En_Adopcion, 'En adopción'),
     )
 
-    estado = models.CharField(max_length=10, choices=ESTADO_MASCOTA, default='En adopción')
+    estado = models.CharField(max_length=15, choices=ESTADO_MASCOTA, default='En adopción')
     nombre_mascota = models.CharField(max_length=200)
     fecha_publicacion = models.DateTimeField('Fecha de publicación')
     imagen = models.ImageField(upload_to="nombre_mascota/%Y/%m/%d", blank=True, null=True)
