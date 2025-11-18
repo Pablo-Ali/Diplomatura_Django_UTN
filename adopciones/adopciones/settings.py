@@ -131,7 +131,7 @@ USE_TZ = True
 STATIC_URL = 'static/' #en este directorio va a ir a buscar los estilos en desarrollo
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),) #acá busca los estilos en producción
-MEDIA_URL = "/meida/"
+MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type
