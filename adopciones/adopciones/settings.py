@@ -139,7 +139,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-LOGIN_REDIRECT_URL = '/inicio' # a dónde va a ir una vez que se loguee
+LOGIN_REDIRECT_URL = '/inicio/' # a dónde va a ir una vez que se loguee
 LOGIN_URL = 'auth_login' # a dónde va a ir para registrarse
 ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
 REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
