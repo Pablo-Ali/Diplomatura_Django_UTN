@@ -127,7 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 # indicamos dónde están los directorios con recursos (imágenes y demás)
-STATIC_URL = 'static/' 
+STATIC_URL = '/static/' 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static_dev"),) #en este directorio va a ir a buscar los estilos en desarrollo
 STATIC_ROOT = os.path.join(BASE_DIR, "static") #acá busca los estilos en producción
 MEDIA_URL = "/media/"
@@ -140,7 +140,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 LOGIN_REDIRECT_URL = '/inicio/' # a dónde va a ir una vez que se loguee
-LOGIN_URL = 'auth_login' # a dónde va a ir para registrarse
+LOGIN_URL = '/accounts/login/' # a dónde va a ir para registrarse
 ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
 REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
 SITE_ID = 1
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # manda los mails de confirmación de registro a la consola
