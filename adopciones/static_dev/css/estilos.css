@@ -1,0 +1,19 @@
+.carrusel-img {
+    height: 600px;        /* fijás la altura del carrusel */
+    object-fit: cover;    /* evita deformación y mantiene proporción */
+}
+
+body {
+    background-color: #000;   /* negro */
+    color: #fff;              /* blanco */
+}
+
+h1 {
+    text-align: center;
+}
+
+.card-img-fixed {
+    height: 220px;        /* Tamaño de la imagen */
+    width: 100%;
+    object-fit: cover;    /* Recorte sin deformación */
+}
